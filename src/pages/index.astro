@@ -1,15 +1,21 @@
 ---
+import axios from "axios"
 import BaseLayout from "../Layout/BaseLayout.astro";
-import Card from "../components/Card";
-import Product from "../components/Product.vue";
+import CreatePost from "../components/CreatePost"
+import PostCard from "../components/PostCard"
 
+const getPostesReq = await axios.get("http://localhost:4321/api/post.json");
+const posts = await getPostesReq.data;
 ---
 
 <BaseLayout>
-  <div>
-    <div>Hello World</div>
-    <Card name={"eslam"} client:load/>
-    <Product/>
+  <div class="fixed bottom-5 right-5">
+    <CreatePost client:visible/>
+  </div>
+  <div class="flex w-full flex-col justify-center items-center py-10 flex-warp gap-5 p-2">
+    {posts.map((data:any) => (
+      <PostCard client:visible data={data}/>
+    ))}
   </div>
 </BaseLayout>
 

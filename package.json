@@ -11,12 +11,21 @@
   },
   "dependencies": {
     "@astrojs/react": "^3.0.2",
+    "@astrojs/tailwind": "^5.0.0",
     "@astrojs/vue": "^3.0.0",
+    "@nextui-org/react": "^2.1.10",
+    "@prisma/client": "^5.2.0",
     "@vitejs/plugin-vue": "^4.3.4",
     "astro": "^3.0.10",
+    "axios": "^1.5.0",
+    "framer-motion": "^10.16.4",
+    "prisma": "^5.2.0",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
+    "react-icons": "^4.11.0",
     "sass": "^1.66.1",
+    "sweetalert2": "^11.7.27",
+    "tailwindcss": "^3.3.3",
     "vue": "^3.3.4"
   }
 }
