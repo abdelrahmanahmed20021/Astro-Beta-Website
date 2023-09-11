@@ -12,7 +12,10 @@ export const POST: APIRoute = async ({ params, request }) => {
   const body = await request.json();
 
   const post = await prisma.post.create({
-    data: body,
+    data: {
+      ...body,
+      userId: "64ff6710fa300c34f58f8394",
+    },
   });
 
   return new Response(JSON.stringify(post));

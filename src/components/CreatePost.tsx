@@ -34,11 +34,11 @@ export default function CreatePost() {
     Swal.fire({
       title: title,
       text: body,
-      icon: "warning",
+      icon: type,
       type: type,
       position: position,
       showConfirmButton: false,
-      timer: 1000,
+      timer: 1200,
     });
   };
 

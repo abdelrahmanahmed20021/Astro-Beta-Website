@@ -3,19 +3,16 @@ import axios from "axios"
 import BaseLayout from "../Layout/BaseLayout.astro";
 import CreatePost from "../components/CreatePost"
 import PostCard from "../components/PostCard"
-
-const getPostesReq = await axios.get("http://localhost:4321/api/post.json");
-const posts = await getPostesReq.data;
+import PostCards from "../components/PostCards";
 ---
 
 <BaseLayout>
   <div class="fixed bottom-5 right-5">
     <CreatePost client:visible/>
   </div>
-  <div class="flex w-full flex-col justify-center items-center py-10 flex-warp gap-5 p-2">
-    {posts.map((data:any) => (
-      <PostCard client:visible data={data}/>
-    ))}
+  <div class=" w-full flex justify-start items-center p-10  gap-5" style="flex-wrap: wrap;">
+    <PostCards client:visible/>
   </div>
 </BaseLayout>
+
 
